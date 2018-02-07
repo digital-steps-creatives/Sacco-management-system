@@ -1,0 +1,30 @@
+.absolute {
+    position: absolute !important;
+}
+.relative {
+    position: relative !important;
+}
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //   flex: 0 0 auto;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.flex-1 {
+    flex-grow: 1;
+}

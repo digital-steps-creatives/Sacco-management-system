@@ -1,9 +1,35 @@
-
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~bootstrap/scss/bootstrap";
+
+@import "utilities";
+
+@import "animations";
+
+@import "~font-awesome/scss/font-awesome";
+@import "~sweetalert2/src/sweetalert2";
+.card {
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.2);
+
+    .card-title {
+        text-align: center;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    &.fixed-nav {
+        padding-top: 70px;
+    }
+    &.welcome {
+        border-top: 5px solid $primary;
+    }
+}
+
+.bordered-top {
+    border-top: 4px solid $primary !important;
+}
+.bordered-left {
+    border-left: 4px solid $primary !important;
+}

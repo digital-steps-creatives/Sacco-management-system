@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MemberRequest;
 use App\Member;
-use Illuminate\Http\Request;
 
 class MembersController extends Controller
 {
@@ -14,7 +14,9 @@ class MembersController extends Controller
      */
     public function index()
     {
-        return view('members.index');
+        $members = Member::getAll();
+
+        return view('members.index', compact('members'));
     }
 
     /**
@@ -33,8 +35,9 @@ class MembersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MemberRequest $request)
     {
+        return Member::create($request->validated());
     }
 
     /**
@@ -46,6 +49,9 @@ class MembersController extends Controller
      */
     public function show(Member $member)
     {
+        $member->load('accounts');
+
+        return view('members.show', compact('member'));
     }
 
     /**
